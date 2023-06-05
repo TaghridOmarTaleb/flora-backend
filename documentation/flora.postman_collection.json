@@ -1,0 +1,1006 @@
+{
+	"info": {
+		"_postman_id": "67d4c2c8-2dbe-462d-b806-0f46fadcced3",
+		"name": "flora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25129623"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "secret",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjFmY2UyZmM5N2ZjNDgzYzk0Mzg4ZiIsImlhdCI6MTY4NDE0MzMzMH0.7ej0f7pvsXDmbyRXQW3FS_KqBg-aZe8fsoMoizo8d_U",
+									"type": "string"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"adminName\":\"admin5\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"adminName\":\"Admin10\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admin/645e44dcee02f762923469b6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"645e44dcee02f762923469b6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admin/645e44dcee02f762923469b6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"645e44dcee02f762923469b6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "content",
+			"item": [
+				{
+					"name": "add content",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "\"titleee\"",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/taghrid/Downloads/wallpaperflare.com_wallpaper.jpg"
+								},
+								{
+									"key": "content",
+									"value": "[\"content1\",\"content2\"]",
+									"type": "text"
+								},
+								{
+									"key": "subtitle",
+									"value": "[\"subtitle1\",\"subtitle2\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/content/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"content",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove content",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new title",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "[\"new content\", \"new content2\"]",
+									"type": "text"
+								},
+								{
+									"key": "subtitle",
+									"value": "[\"new subtitle1\"]",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/taghrid/Pictures/Screenshots/Screenshot from 2023-05-14 14-44-25.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/content/6461f73dcd48796ae9a92287",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"content",
+								"6461f73dcd48796ae9a92287"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit content",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/content/6461f8f6fc97fc483c943887",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"content",
+								"6461f8f6fc97fc483c943887"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "add new message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ1Mzk3ZDM2Njg3NzgwNGMxYTQxOTEiLCJyb2xlIjoic3VwZXJBZG1pbiIsImlzTG9nZ2VkSW4iOmZhbHNlLCJpYXQiOjE2ODIyNTgzMDF9.HzyGbHjTAZMO_f7IiomqkhkBkveDxD5ETspxcnIxBeM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ1Mzk3ZDM2Njg3NzgwNGMxYTQxOTEiLCJyb2xlIjoic3VwZXJBZG1pbiIsImlzTG9nZ2VkSW4iOmZhbHNlLCJpYXQiOjE2ODIyNTgzMDF9.HzyGbHjTAZMO_f7IiomqkhkBkveDxD5ETspxcnIxBeM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"username6\",\n    \"message\":\"new message from new user\",\n    \"email\":\"useremail6@gmail.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/message/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"message",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjFmZmViYjYxNTlmZjUwMjE2NTM0ZCIsImlhdCI6MTY4NDE0NDEwN30.PbGooazp0SZJpm3Y9q4fO0Xsxpaf9eTcj8K_b4T0AGk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/message/6461ff8cb6159ff50216534a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"message",
+								"6461ff8cb6159ff50216534a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/message/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"message",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit mesage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"username6\",\n    \"message\":\"new message from new user new message from new user\",\n    \"email\":\"useremail6@gmail.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/message/645e50d26329395f94430ea9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"message",
+								"645e50d26329395f94430ea9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/message/6461ff8cb6159ff50216534a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"message",
+								"6461ff8cb6159ff50216534a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ownerInfo",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\":\"address\",\n    \"phone\":\"11111111\",\n   \"socialMedia\": {\n        \"facebook\": \"https://www.facebook.com/yourpage\",\n        \"twitter\": \"https://twitter.com/yourhandle\",\n        \"instagram\": \"https://www.instagram.com/yourprofile\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/ownerInfo/64621e509b7ab217bd16729a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"ownerInfo",
+								"64621e509b7ab217bd16729a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plant",
+			"item": [
+				{
+					"name": "add new plant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": " Photos",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/taghrid/Pictures/Screenshots/Screenshot from 2023-05-14 14-44-51.png"
+								},
+								{
+									"key": "description",
+									"value": "Pothos is a popular indoor plant with long, trailing vines.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "indoor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/plant/?\"title\"=\"Pothos\"&\"image\"=\"https://example.com/pothos.jpg\"&\"description\"=\"Pothos is a popular indoor plant with long, trailing vines.\"LLLL\n&\"price\"=10& \"category\"=\"indoor\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								""
+							],
+							"query": [
+								{
+									"key": "\"title\"",
+									"value": "\"Pothos\""
+								},
+								{
+									"key": "\"image\"",
+									"value": "\"https://example.com/pothos.jpg\""
+								},
+								{
+									"key": "\"description\"",
+									"value": "\"Pothos is a popular indoor plant with long, trailing vines.\"LLLL\n"
+								},
+								{
+									"key": "\"price\"",
+									"value": "10"
+								},
+								{
+									"key": " \"category\"",
+									"value": "\"indoor\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/plant/6462260b077e580fdfc66a58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"6462260b077e580fdfc66a58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all hidden plants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/plant/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new plant",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/plant/6462260b077e580fdfc66a58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"6462260b077e580fdfc66a58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/plant/6462260b077e580fdfc66a58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"6462260b077e580fdfc66a58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post hidden plant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "my title",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/taghrid/Pictures/Screenshots/Screenshot from 2023-05-14 14-44-25.png"
+								},
+								{
+									"key": "description",
+									"value": "new plant description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "isDeleted",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "outdoor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/plant/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hidden plant by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/plant/646228be86c8edc7846ff1f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"646228be86c8edc7846ff1f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "blabla",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/plant/646228be86c8edc7846ff1f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"646228be86c8edc7846ff1f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/plant/646228be86c8edc7846ff1f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"646228be86c8edc7846ff1f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all available",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/plant/av",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"av"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new title",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/plant/soft/64622604077e580fdfc66a4e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"plant",
+								"soft",
+								"64622604077e580fdfc66a4e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workshop",
+			"item": [
+				{
+					"name": "add workshop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/taghrid/Pictures/Screenshots/Screenshot from 2023-05-14 14-39-43.png"
+								},
+								{
+									"key": "title",
+									"value": "title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"type": "text"
+								},
+								{
+									"key": "x-auth-token",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/workshop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"workshop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit workshop",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new title",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/workshop/6462355cdc5469801fe94cfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"workshop",
+								"6462355cdc5469801fe94cfc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete workshop",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIyMTBiNjRkZmI3OWIyNWRiNWUyNyIsImlhdCI6MTY4NDE1MjU4OH0.Us-5m64rbs-oB0loC59HRbp-9m49HEkNihDHbX1K0LI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/workshop/6462355cdc5469801fe94cfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"workshop",
+								"6462355cdc5469801fe94cfc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
