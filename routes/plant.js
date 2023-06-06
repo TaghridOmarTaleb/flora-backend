@@ -1,8 +1,6 @@
 import express from "express";
 const router = express.Router();
 import controller from "../controllers/plant.js";
-import authorization from "../middelware/authorization.js";
-import upload from "../middelware/multer.js";
 
 router.get("/av",  controller.getAvailable);
 router.get("/",  controller.getHidden);
